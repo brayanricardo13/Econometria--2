@@ -8,3 +8,7 @@ tsline g
 *Modelo RD(3):
 regress d.u l(0/3).g
 
+*Obtenemos los residuales 
+predict ehat,residuals
+*correlograma
+ ac ehat, lags(15)
