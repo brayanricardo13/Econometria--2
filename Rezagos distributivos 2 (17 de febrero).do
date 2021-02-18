@@ -12,3 +12,7 @@ regress d.u l(0/3).g
 predict ehat,residuals
 *correlograma
  ac ehat, lags(15)
+ *coeficientes de correlacion 
+ ac ehat, lags(15) nograph generate (rk)
+ *creamos a z
+ generate z=((98)^0.5)*rk
