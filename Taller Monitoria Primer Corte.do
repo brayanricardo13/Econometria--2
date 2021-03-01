@@ -12,6 +12,22 @@ gen Ventas_3 = Ventas[_n-3]
 * Minimos cuadrados ordinarios
 reg Inventario Ventas Ventas_1  Ventas_2  Ventas_3
 
+* Multicolinealidad 
+vif
+
+gen zt0 = Ventas + Ventas_1 + Ventas_2 + Ventas_3
+
+gen zt1 = Ventas_1 + 2*Ventas_2 + 3*Ventas_3
+
+gen zt2 = Ventas_1 + 4*Ventas_2 + 9*Ventas_3
+
+reg Inventario zt0 zt1 zt2
+* Diferencias 
+gen d1 =  Ventas_1 - Ventas
+
+gen d2 =  Ventas_2 - Ventas
+
+gen d3 =  Ventas_3 - Ventas
 
 
-
+reg Inventario Ventas d1 d2 d3
