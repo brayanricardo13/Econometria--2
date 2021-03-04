@@ -30,5 +30,40 @@ gen d2 =  Ventas_2 - Ventas
 
 gen d3 =  Ventas_3 - Ventas
 
-
 reg Inventario Ventas d1 d2 d3
+
+
+* 2  Punto Taller 
+import excel "C:\Users\jhona\Desktop\Brayan\6 SEMESTRE 2021-1\Econometria ll\Datos.xlsx", sheet("Hoja1") cellrange(A1:C65) firstrow
+
+generate lcons = log(GCpc) 
+
+generate ling = log(IDpc)
+
+generate c_cons = lcons - lcons[_n-1]
+
+
+generate c_ing = ling - ling[_n-1]
+ 
+ 
+reg c_cons c_ing
+ 
+gen L1c_ing = c_ing[_n-1]
+  
+reg c_cons c_ing L1c_ing
+
+
+  
+  
+
+
+
+ 
+
+
+
+
+
+
+
+
