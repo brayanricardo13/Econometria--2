@@ -5,4 +5,7 @@ tsset t
 /* Estimar un modelo de rezagos distribuidos finitos de orden 3 */
 regress d.sales adv l.adv l2.adv l3.adv 
 * correlograma 
+predict ehat,residuals
 ac ehat, lags(10)
+*Prueba LM (breusch-godfrey LM test for autocorrelacion )
+estat bgodfrey, lags(10)
