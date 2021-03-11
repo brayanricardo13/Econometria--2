@@ -16,6 +16,9 @@ predict ehat,residuals
 ac ehat, lags(10)
 *Prueba LM (breusch-godfrey LM test for autocorrelacion )
 estat bgodfrey, lags(10)
+* Estadisticos robustos Newey-West 
+newey sales l(0/3).adv, lag(0)
+newey sales l(0/3).adv
 
 
 
