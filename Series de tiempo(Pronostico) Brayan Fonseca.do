@@ -8,7 +8,17 @@ generate fecha2 = date(fecha,"DMY")
 tsset fecha2, daily
 
 tsline pibrealtrimestral
+*logaritmo 
+gen lpibrealtrimestral = ln(pibrealtrimestral)
+tsline lpibrealtrimestral
 
-* 
+* Filtro hodrick prescott 
+
+/*Se recomienda un valor de 
+1600 para series trimestrales
+129600 para series mensuales 
+6.25 para series anuales*/-
+
+
 
 
