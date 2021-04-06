@@ -5,7 +5,77 @@ tsset Mes
 tsline Ventas
 summarize
 
-tssmooth ma MA3 =Ventas, window(2)
+
+gen Ventas_1 = Ventas[_n - 1]
+gen Ventas_2 = Ventas[_n - 2]
+gen Ventas_3 = Ventas[_n - 3]
+gen Ventas_4 = Ventas[_n - 4]
+
+
+regress Ventas  Ventas_1 
+regress Ventas  Ventas_1  Ventas_2 
+regress Ventas  Ventas_1  Ventas_2  Ventas_3 
+regress Ventas  Ventas_1  Ventas_2  Ventas_3  Ventas_4
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+import delimited "C:\Users\jhona\Desktop\Brayan\Github\Econometria--2\BASES DE DATOS\ventash.csv"
+
+generate fecha = date(mes,"DMY")
+tsset fecha, daily
+
+gen Ventas_1 = ventas [_n-1]
+gen Ventas_2 = ventas [_n - 2]
+gen Ventas_3 = ventas  [_n - 3]
+gen Ventas_4 = ventas  [_n - 4]
+
+
+
+
+
+
+tsline ventas
+summarize
+
+
+
+
+
+tssmooth ma MA3 =Ventas, window(3)
 
 
 
@@ -20,10 +90,4 @@ tssmooth ma MA12 =Ventas, window(12)
 
 
 
-
-
-regress Ventas l.Ventas l2.Ventas
-regress Ventas l.Ventas l2.Ventas
-regress Ventas l.Ventas l2.Ventas
-regress Ventas l.Ventas l2.Ventas
 
