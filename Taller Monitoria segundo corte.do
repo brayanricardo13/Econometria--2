@@ -69,9 +69,9 @@ tssmooth exponential SExp5 = Ventas, parms(0.5)
 tssmooth exponential SExp8 = Ventas, parms(0.8)
 tssmooth exponential SExp9 = Ventas, parms(0.9)
 
-
-
-
+tsline Ventas SExp5
+tsline Ventas SExp8
+tsline Ventas SExp9
 
 **********************************************************************************
 import delimited "C:\Users\jhona\Desktop\Brayan\Github\Econometria--2\BASES DE DATOS\ventash.csv"
