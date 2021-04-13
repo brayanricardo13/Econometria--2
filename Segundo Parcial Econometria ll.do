@@ -31,3 +31,5 @@ estat ic
 regress incgwth incgwth_1 incgwth_2 congwth congwth_1 congwth_2 
 estat ic
 
+*ARDL(2,0)
+regress incgwth incgwth_1 incgwth_2 
