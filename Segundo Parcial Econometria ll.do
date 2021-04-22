@@ -10,6 +10,7 @@ tsline congwth
 tsline incgwth congwth
 
 correlate incgwth congwth
+correlate incgwth congwth, covariance
 twoway (scatter incgwth congwth)
 twoway (scatter incgwth congwth) (lfit incgwth congwth)
 
