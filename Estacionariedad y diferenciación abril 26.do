@@ -8,6 +8,7 @@ twoway (tsline pibrealanual),tlabel(, angle(vertical))
 twoway (tsline inflacion),tlabel(, angle(vertical))
 
 
+
 *Comando de prueba de raiz unitaria con intercepto
 generate t=1+_n-1
 tsset t
