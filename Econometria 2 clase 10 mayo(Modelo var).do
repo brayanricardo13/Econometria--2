@@ -7,9 +7,13 @@ tsset Fecha2,daily
 twoway (tsline pibrealanual), tlabel(, angle(vertical)) tmtick(, angle(vertical))
 twoway (tsline inflacion), tlabel(, angle(vertical)) tmtick(, angle(vertical))
 
-
 generate t=1+_n-1
 tsset t 
+
+tsline d1.pibrealanual
+tsline d2.pibrealanual
+tsline d1.inflacion
+tsline d2.inflacion
 
 
 *Estimar la primera ecuación
